@@ -31,7 +31,13 @@ Edit the top of `copy2usb.sh` to match your environment:
 - `MAIL_TO` - destination email address for notifications
 - `MAIL_FROM` - sender email address used in the notification header
 
-Example:
+Example: configurtion for your sSMTP server:
+
+```bash
+vi /etc/ssmtp/ssmtp.conf
+```
+
+Minimum content for your SMTP gateway without authentication:
 
 ```bash
 SRC="/volume1/data/DS918_1.hbk"
@@ -43,19 +49,27 @@ MAIL_FROM="nas@ds918.local"
 
 ## Usage
 
-1. Make sure the script is executable:
+1. Testing the sSMTP configuration with email sending can be done with this command.
+
+```bash
+echo -e "From: nas@ds918.local\nTo: hostmaster@example.com\nSubject: Test\n\nTest von DS918" | /bin/ssmtp hostmaster@example.com
+```
+
+2. Make sure the script is executable:
 
 ```bash
 chmod +x copy2usb.sh
 ```
 
-2. Run the script manually:
+3. Run the script manually:
 
 ```bash
 ./copy2usb.sh
 ```
 
-3. Optionally schedule it with `cron` or Synology Task Scheduler to run regularly.
+4. Optionally schedule it with `cron` or Synology Task Scheduler to run regularly.
+
+A task is created in the DSM Task Scheduler, Go to Control Panel > Task Scheduler.
 
 ## Expected behavior
 
