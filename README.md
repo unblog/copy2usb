@@ -1,6 +1,6 @@
 # copy2usb.sh
 
-A simple backup helper script for Synology NAS that copies a Hyper Backup file or folder from a fixed source path to an external USB-mounted destination, then sends an email notification about the result.
+A simple backup helper script drive Synology NAS that copies a Hyper Backup file or folder from a fixed source path to an external USB-mounted destination, then sends an email notification about the result.
 
 ## What it does
 
